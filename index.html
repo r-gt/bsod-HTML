@@ -1,0 +1,90 @@
+<html>
+	<head>
+<style>
+
+body{background-color: #0078d7; color: white;}
+</style>
+<title>BSOD</title>
+</head>
+
+<body>
+<center>
+<!-- :( --><p style="font-size: 130px; 
+position:absolute;
+left: 130px;
+top: -20px;">:(</p>
+
+<!--text--><div style="
+position:absolute;
+left: 10%;
+top: 300px;
+font-size: 22px;
+width: 550px;
+text-align:left ;
+padding-left:0px;
+"> Your PC ran into a problem and needs to restart. We're
+	just collecting some error info, and then we'll restart for
+	you. </div>
+	
+	<!--QR image--><img src="QR.svg" alt="" width="85px" height="85px"
+	style="
+	position: absolute;
+	left:115px;
+	top: 480px;
+	">
+
+<!--percentage--></center>
+<p id="percentage" style="
+font-size: 35px;
+position: absolute;
+top:370px;
+left:115px;"> </p>
+
+
+<!--indications--><div style="top: 475px;
+position: absolute;
+left:215px;
+font:lighter;
+font-size: 15px;
+">For more information about this issue and possible fixes, visit https://www.windows.com/stopcode</div>
+
+
+<div style="position: absolute;
+top: 520px;
+left: 215px;
+font-size: 15px;
+font: lighter;
+">If you call a support person, give them this info:</div>
+
+
+<div id="exitcode" style="position: absolute;
+top: 549px;
+left: 215px;
+font-size: 15px;
+font: lighter;
+"></div>
+
+<!--script-->
+<script>
+
+//percentage script
+var percentage = 0
+var exitcodes = ["CRITICAL_PROCESS_DIED", "SYSTEM_THREAD_EXCEPTION_NOT_HANDLED", "IRQL_NOT_LESS_OR_EQUAL", "VIDEO_TDR_TIMEOUT_DETECTED", "PAGE_FAULT_IN_NONPAGED_AREA", "SYSTEM_SERVICE_EXCEPTION", "DPC_WATCHDOG_VIOLATION"]
+
+
+setInterval(Time, 400)
+function Time(){
+if(percentage < 100){
+
+	percentage = percentage+5 
+
+	document.getElementById("percentage").innerHTML = percentage + '%'
+	}
+}
+var pas = exitcodes[Math.floor(Math.random()*exitcodes.length)]
+
+document.getElementById("exitcode").innerHTML = "Stop code: " + pas
+</script>
+
+</body>
+</html>
